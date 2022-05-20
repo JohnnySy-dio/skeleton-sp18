@@ -1,5 +1,7 @@
+import static sun.util.calendar.ZoneInfoFile.ZoneOffsetTransitionRule.isLeapYear;
+
 /** Class that determines whether or not a year is a leap year.
- *  @author YOUR NAME HERE
+ *  @author Johnny Sy
  */
 public class LeapYear {
 
