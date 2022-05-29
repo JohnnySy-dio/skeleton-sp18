@@ -3,9 +3,7 @@ import static java.lang.Math.sqrt;
 
 public class Planet {
 // Its current x position
-    double xxPos;
-
-
+    public double xxPos;
     public double yyPos;
     public double xxVel;
     public double yyVel;
@@ -38,6 +36,8 @@ public class Planet {
 
 //  Calculating the force exerted on this planet by the given planet
     public double calcForceExertedBy(Planet p){
+        if(calcDistance(p) == 0)
+        return 0;
         double G = 6.67e-11;
         double force = G* this.mass
                         * p.mass
@@ -47,14 +47,16 @@ public class Planet {
 
 //  Calculating forcer exerted on this planet by the give planet in X/Y dir;
     public double calcForceExertedByX(Planet p){
-
+        if(calcDistance(p) == 0)
+            return 0;
         double cosx = (p.xxPos - this.xxPos)/calcDistance(p);
         double fX = calcForceExertedBy(p) * cosx;
         return fX;
     }
 
     public double calcForceExertedByY(Planet p){
-
+        if(calcDistance(p) == 0)
+            return 0;
         double sinx = (p.yyPos - this.yyPos)/calcDistance(p);
         double fY = calcForceExertedBy(p)*sinx;
 
