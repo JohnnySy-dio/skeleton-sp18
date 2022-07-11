@@ -13,8 +13,8 @@ public class Palindrome {
        String actual = "";
 
         if (word == null || word.length() <= 1) {
-        return true;
-    }
+            return true;
+        }
        for (int i = 0; i < word.length();i++){
            actual += P.removeLast();
        }
@@ -30,16 +30,4 @@ public class Palindrome {
         }
         return true;
     }
-//    public boolean isPalindrome(String word) {
-//        if (word == null || word.length() <= 1) {
-//            return true;
-//        }
-//        int len = word.length();
-//        for (int i = 0; i < len / 2; i++) {
-//            if (word.charAt(i) != word.charAt(len - i - 1)) {
-//                return false;
-//            }
-//        }
-//        return true;
-//}
 }

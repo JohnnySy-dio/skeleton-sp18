@@ -1,8 +1,9 @@
 public class OffByOne implements CharacterComparator{
     @Override
     public boolean equalChars(char x, char y) {
-       Character x1 = Character.valueOf(x);
-       Character y1 = Character.valueOf(y);
-       return x1.equals(y1);
+        int value = Character.valueOf(x) - Character.valueOf(y);
+        return value == 1 || value == -1;
     }
+
+
 }
