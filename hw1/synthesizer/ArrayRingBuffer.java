@@ -61,6 +61,10 @@ public class ArrayRingBuffer<T>  extends AbstractBoundedQueue<T>{
      */
     public T peek() {
         // TODO: Return the first item. None of your instance variables should change.
+        if(isEmpty())
+        {
+            throw new RuntimeException("The buffer is is empty!");
+        }
         return rb[first];
     }
 
@@ -85,8 +89,8 @@ public class ArrayRingBuffer<T>  extends AbstractBoundedQueue<T>{
         @Override
         public T next()
         {
-            pos = (pos + 1) % capacity;
             T retValue = rb[pos];
+            pos = (pos + 1) % capacity;
             curNum++;
             return retValue;
 
